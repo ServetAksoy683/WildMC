@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="wild_season">SEZON 1</string>
+    <string name="wild_updates_title">Sunucu güncellemeleri</string>
+    <string name="wild_updates_empty">Henüz duyuru yok.</string>
+    <string name="wild_updates_failed">Güncellemeler alınamadı.</string>
+    <string name="wild_retry">Tekrar dene</string>
+    <string name="wild_refresh">Yenile</string>
+    <string name="wild_server_checking">Kontrol ediliyor…</string>
+    <string name="wild_server_online">Çevrimiçi</string>
+    <string name="wild_server_offline">Çevrimdışı görünüyor</string>
+    <string name="wild_players">%1$d / %2$d oyuncu</string>
+    <string name="wild_ping">%1$d ms</string>
+    <string name="wild_join">SUNUCUYA KATIL</string>
+    <string name="wild_join_hint">Seçili sürümle %1$s adresine otomatik bağlanır</string>
+</resources>

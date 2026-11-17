@@ -43,12 +43,6 @@ enum class DarkMode(val textRes: Int) {
  */
 @Composable
 fun isLauncherInDarkTheme(): Boolean {
-    val value = LauncherSettings.launcherDarkMode.state
-    return key(value) {
-        when (value) {
-            DarkMode.Enable -> true
-            DarkMode.Disable -> false
-            DarkMode.FollowSystem -> isSystemInDarkTheme()
-        }
-    }
+    // WildMC uses a single black and gold dark theme
+    return true
 }

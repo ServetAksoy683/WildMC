@@ -601,6 +601,42 @@ private fun customDark(
     )
 }
 
+/** WildMC: black surfaces, gold accent, white text */
+val WildMcColorScheme: ColorScheme = darkColorScheme(
+    primary = Color(0xFFFFC400),
+    onPrimary = Color(0xFF0B0B0B),
+    primaryContainer = Color(0xFF3A2F00),
+    onPrimaryContainer = Color(0xFFFFE066),
+    inversePrimary = Color(0xFF8A6D00),
+    secondary = Color(0xFFFFE066),
+    onSecondary = Color(0xFF0B0B0B),
+    secondaryContainer = Color(0xFF2A2200),
+    onSecondaryContainer = Color(0xFFFFE066),
+    tertiary = Color(0xFFFFFFFF),
+    onTertiary = Color(0xFF0B0B0B),
+    tertiaryContainer = Color(0xFF262626),
+    onTertiaryContainer = Color(0xFFFFFFFF),
+    background = Color(0xFF0B0B0B),
+    onBackground = Color(0xFFFFFFFF),
+    surface = Color(0xFF0B0B0B),
+    onSurface = Color(0xFFFFFFFF),
+    surfaceVariant = Color(0xFF1C1C1C),
+    onSurfaceVariant = Color(0xFFBDBDBD),
+    surfaceTint = Color(0xFFFFC400),
+    inverseSurface = Color(0xFFFFFFFF),
+    inverseOnSurface = Color(0xFF0B0B0B),
+    outline = Color(0xFF7A6A2A),
+    outlineVariant = Color(0xFF3D3410),
+    scrim = Color(0xFF000000),
+    surfaceBright = Color(0xFF2A2A2A),
+    surfaceDim = Color(0xFF050505),
+    surfaceContainerLowest = Color(0xFF000000),
+    surfaceContainerLow = Color(0xFF0F0F0F),
+    surfaceContainer = Color(0xFF141414),
+    surfaceContainerHigh = Color(0xFF1C1C1C),
+    surfaceContainerHighest = Color(0xFF262626),
+)
+
 @Composable
 fun ZalithLauncherTheme(
     darkTheme: Boolean = isLauncherInDarkTheme(),
@@ -617,43 +653,7 @@ fun ZalithLauncherTheme(
 
     val context = LocalContext.current
 
-    val targetColorScheme = remember(darkTheme, dynamicColor, colorTheme, customColor, customPaletteStyle) {
-        when {
-            dynamicColor && colorTheme == ColorThemeType.DYNAMIC && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
-                if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
-            }
-
-            darkTheme -> when (colorTheme) {
-                ColorThemeType.EMBERMIRE -> embermireDark
-                ColorThemeType.VELVET_ROSE -> velvetRoseDark
-                ColorThemeType.MISTWAVE -> mistwaveDark
-                ColorThemeType.GLACIER -> glacierDark
-                ColorThemeType.VERDANTFIELD -> verdantFieldDark
-                ColorThemeType.URBAN_ASH -> urbanAshDark
-                ColorThemeType.VERDANT_DAWN -> verdantDawnDark
-                ColorThemeType.CUSTOM -> customDark(
-                    color = customColor,
-                    style = customPaletteStyle
-                )
-                else -> embermireDark
-            }
-
-            else -> when (colorTheme) {
-                ColorThemeType.EMBERMIRE -> embermireLight
-                ColorThemeType.VELVET_ROSE -> velvetRoseLight
-                ColorThemeType.MISTWAVE -> mistwaveLight
-                ColorThemeType.GLACIER -> glacierLight
-                ColorThemeType.VERDANTFIELD -> verdantFieldLight
-                ColorThemeType.URBAN_ASH -> urbanAshLight
-                ColorThemeType.VERDANT_DAWN -> verdantDawnLight
-                ColorThemeType.CUSTOM -> customLight(
-                    color = customColor,
-                    style = customPaletteStyle
-                )
-                else -> embermireLight
-            }
-        }
-    }
+    val targetColorScheme = WildMcColorScheme
 
     var currentDarkTheme by remember { mutableStateOf(darkTheme) }
     var currentDisplayScheme by remember { mutableStateOf(targetColorScheme) }

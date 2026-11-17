@@ -84,6 +84,7 @@ import com.movtery.zalithlauncher.game.account.AccountsManager
 import com.movtery.zalithlauncher.game.account.getAccountTypeName
 import com.movtery.zalithlauncher.game.account.wardrobe.toArmModel
 import com.movtery.zalithlauncher.game.version.installed.Version
+import com.movtery.zalithlauncher.ui.screens.content.wild.WildHome
 import com.movtery.zalithlauncher.game.version.installed.VersionsManager
 import com.movtery.zalithlauncher.setting.LauncherSettings
 import com.movtery.zalithlauncher.setting.enums.ActionMenuSide
@@ -273,21 +274,14 @@ private fun ContentMenu(
     modifier: Modifier = Modifier,
 ) {
     val ctx = rememberAnimatedContext(isVisible = isVisible)
-    val gridState = rememberCardGridState()
 
-    CompositionLocalProvider(
-        LocalHomeCardLauncher provides onLaunchGame,
-        LocalHomeCardVersionSettings provides onOpenVersionSettings,
-        LocalServerCardQuickPlay provides onQuickPlayServer
-    ) {
-        HomeGrid(
-            state = gridState,
-            isVisible = isVisible,
-            modifier = modifier
-                .fillMaxSize()
-                .animated(ctx)
-        )
-    }
+    // WildMC: the original card grid is replaced by the server home (status, join button, updates)
+    WildHome(
+        onQuickPlayServer = onQuickPlayServer,
+        modifier = modifier
+            .fillMaxSize()
+            .animated(ctx)
+    )
 }
 
 @Composable

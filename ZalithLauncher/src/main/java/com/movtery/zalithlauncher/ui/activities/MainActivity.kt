@@ -227,18 +227,10 @@ class MainActivity : BaseAppCompatActivity() {
         NotificationManager.initManager(this)
 
         //检查更新
-        if (!isImporting && launcherUpgradeViewModel.operation == LauncherUpgradeOperation.None) {
-            lifecycleScope.launch {
-                launcherUpgradeViewModel.checkOnAppStart()
-            }
-        }
+        // WildMC: the upstream (ZalithLauncher) release checker is disabled
 
         //拉取当月赞助者数据
-        lifecycleScope.launch {
-            sponsorsViewModel.loadOnStart(
-                showLastMonth = GuideProgress.isPlayed(GuideKeys.Main) && !isImporting
-            )
-        }
+        // WildMC: upstream sponsor list is not loaded
 
         //错误信息展示
         lifecycleScope.launch {
@@ -271,7 +263,7 @@ class MainActivity : BaseAppCompatActivity() {
                         }
                     }
                     is EventViewModel.Event.CheckUpdate -> {
-                        checkUpdate()
+                        // WildMC: manual update check against the upstream project is disabled
                     }
                     is EventViewModel.Event.ShowSponsors -> {
                         sponsorsViewModel.openDialog()

@@ -129,8 +129,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = zalithPackageName
-        applicationIdSuffix = ".v2"
+        applicationId = "com.sentertainment.wildmc"
         minSdk = 26
         targetSdk = 34
         versionCode = launcherVersionCode
@@ -150,8 +149,6 @@ android {
         }
         debug {
             isMinifyEnabled = false
-            applicationIdSuffix = ".debug"
-            versionNameSuffix = "-debug"
             signingConfig = signingConfigs.getByName("debugBuild")
         }
     }
