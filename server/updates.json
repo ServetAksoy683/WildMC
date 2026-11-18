@@ -1,17 +1,17 @@
 {
   "updates": [
     {
-      "title": "WildMC Sezon 1 başladı",
-      "date": "Sezon 1",
+      "title": "WildMC Sezon 2 başladı",
+      "date": "Sezon 2",
       "tag": "Yeni",
-      "body": "Sunucu açıldı. Bu alandaki duyuruları GitHub'daki server/updates.json dosyasından düzenleyebilirsin.",
+      "body": "Sunucu açıldı. "SOĞUK YERLER" sezonuna adım atabilir, Şovalyeler kasası açabilirsin!.",
       "link": ""
     },
     {
-      "title": "Örnek güncelleme",
-      "date": "Tarihi buraya yaz",
+      "title": "Battlepass",
+      "date": "18.11.2026",
       "tag": "Güncelleme",
-      "body": "Başlık, tarih, etiket ve metin alanlarını kendi duyurunla değiştir. Bağlantı (link) eklersen kart tıklanınca açılır.",
+      "body": "Battlepass yeni ödüllerle ve setlerle yeniden donatıldı!",
       "link": ""
     }
   ]
